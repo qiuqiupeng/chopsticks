@@ -20,7 +20,7 @@
 
 	<!-- scans the classpath for annotated components (including @Repostory 
 		and @Service that will be auto-registered as Spring beans -->
-	<context:component-scan base-package="me.leep.wf" />
+	<context:component-scan base-package="me.leep" />
 
 	<!-- 配置Spring Data JPA扫描目录 -->
 	<jpa:repositories base-package="me.leep.wf.repository" />

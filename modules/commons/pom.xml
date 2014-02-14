@@ -21,6 +21,16 @@
 			<artifactId>xstream</artifactId>
 			<version>${xstream.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>1.4.3.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>javax.persistence</artifactId>
+			<version>2.1.0</version>
+		</dependency>
 	</dependencies>
 
 	<properties>

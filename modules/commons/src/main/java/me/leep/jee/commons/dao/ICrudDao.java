@@ -1,10 +1,8 @@
-package me.leep.wf.dao.aware;
+package me.leep.jee.commons.dao;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-
-import me.leep.wf.dao.Dao;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.transaction.annotation.Isolation;
@@ -13,8 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 提供了常用增删改查(CRUD)功能的DAO基础接口。<BR>
- * 实体状态说明：需要扩展并实现该接口， {@link me.leep.wf.dao.impl.SimpleCrudDaoImpl}
- * {@link me.leep.wf.dao.impl.CrudDaoImpl} 建议扩展接口并实现该接口
+ * 实体状态说明：需要扩展并实现该接口， {@link me.leep.jee.commons.dao.SimpleCrudDaoImpl}
+ * {@link me.leep.jee.commons.dao.CrudDaoImpl} 建议扩展接口并实现该接口
  * 
  * @param <E>
  * @author 李鹏

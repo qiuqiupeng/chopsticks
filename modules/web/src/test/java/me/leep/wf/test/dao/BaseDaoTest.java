@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
-import me.leep.wf.dao.aware.IBaseDao;
+import me.leep.jee.commons.dao.IBaseDao;
 import me.leep.wf.entity.system.UserBean;
 import me.leep.wf.test.repo.AbstractRepoTest;
 

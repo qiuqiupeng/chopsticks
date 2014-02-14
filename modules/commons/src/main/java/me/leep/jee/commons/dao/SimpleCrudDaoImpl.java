@@ -1,4 +1,4 @@
-package me.leep.wf.dao.impl;
+package me.leep.jee.commons.dao;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -11,8 +11,6 @@ import java.util.Map;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
-import me.leep.wf.dao.aware.ICrudDao;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -173,48 +171,40 @@ public abstract class SimpleCrudDaoImpl<E> implements
 		return entityManager.find(getEntityClass(), id);
 	}
 
-	@Override
 	public long countAll() {
 		return new Long(findBy(true, true, getEntityClass(), null, 0, 0).get(0)
 				.toString());
 	}
 
-	@Override
 	public long countAllByEqual(Map<String, Object> paramsMap) {
 		return new Long(findBy(true, false, getEntityClass(), paramsMap, 0, 0)
 				.get(0).toString());
 	}
 
-	@Override
 	public long countAllByLike(Map<String, String> paramsMap) {
 		Map<String, Object> map = toStringObjectMap(paramsMap);
 		return new Long(findBy(true, true, getEntityClass(), map, 0, 0).get(0)
 				.toString());
 	}
 
-	@Override
 	public List<E> findByEqual(Map<String, Object> paramsMap) {
 		return findBy(false, false, getEntityClass(), paramsMap, 0, 0);
 	}
 
-	@Override
 	public List<E> findByLike(Map<String, String> paramsMap) {
 		Map<String, Object> map = toStringObjectMap(paramsMap);
 		return findBy(false, true, getEntityClass(), map, 0, 0);
 	}
 
-	@Override
 	public List<E> findPager(int from, int size) {
 		return findBy(false, false, getEntityClass(), null, from, size);
 	}
 
-	@Override
 	public List<E> findPagerByEqual(Map<String, Object> paramsMap, int from,
 			int size) {
 		return findBy(false, false, getEntityClass(), paramsMap, from, size);
 	}
 
-	@Override
 	public List<E> findPagerByLike(Map<String, String> paramsMap, int from,
 			int size) {
 		Map<String, Object> map = toStringObjectMap(paramsMap);
