@@ -3,7 +3,7 @@
   <parent>
     <groupId>me.leep.jee</groupId>
     <artifactId>chopsticks</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <relativePath>../..</relativePath>
   </parent>
   <artifactId>web</artifactId>
@@ -496,4 +496,5 @@
 			</plugin>
 		</plugins>
 	</build>
+	<version>0.99</version>
 </project>
