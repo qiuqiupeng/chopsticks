@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import me.leep.wf.dao.Dao;
-import me.leep.wf.entity.BaseEntity;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.transaction.annotation.Isolation;
@@ -22,7 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @version 1.0
  */
 @Transactional(isolation = Isolation.DEFAULT, propagation = Propagation.REQUIRED)
-public interface ICrudDao<E extends BaseEntity> extends Dao {
+public interface ICrudDao<E> extends Dao {
 
 	/**
 	 * 持久化一个实体。

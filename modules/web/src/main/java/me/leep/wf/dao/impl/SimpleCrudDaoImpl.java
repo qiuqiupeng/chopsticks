@@ -13,7 +13,6 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import me.leep.wf.dao.aware.ICrudDao;
-import me.leep.wf.entity.BaseEntity;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,7 +33,7 @@ import org.slf4j.LoggerFactory;
  * @version 1.0
  */
 @SuppressWarnings("unchecked")
-public abstract class SimpleCrudDaoImpl<E extends BaseEntity> implements
+public abstract class SimpleCrudDaoImpl<E> implements
 		ICrudDao<E> {
 
 	protected final Logger log = LoggerFactory
