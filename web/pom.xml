@@ -477,7 +477,7 @@
 				<configuration>
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<webApp>
-						<contextPath>/wf</contextPath><!--访问路径如 localhost:8888/wf -->
+						<contextPath>/web</contextPath><!--访问路径如 localhost:8888/web -->
 					</webApp>
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
