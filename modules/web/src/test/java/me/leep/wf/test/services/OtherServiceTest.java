@@ -2,8 +2,8 @@ package me.leep.wf.test.services;
 
 import java.beans.PropertyDescriptor;
 
+import me.leep.jee.commons.util.BeanUtil;
 import me.leep.wf.entity.system.UserBean;
-import me.leep.wf.util.BeanUtil;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

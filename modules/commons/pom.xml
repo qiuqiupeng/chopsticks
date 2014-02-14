@@ -1,10 +1,45 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>me.leep.jee</groupId>
-    <artifactId>chopsticks</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <relativePath>../..</relativePath>
-  </parent>
-  <artifactId>commons</artifactId>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>me.leep.jee</groupId>
+		<artifactId>chopsticks</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../..</relativePath>
+	</parent>
+	<artifactId>commons</artifactId>
+
+	<repositories>
+		<repository>
+			<id>Alfresco Maven Repository</id>
+			<url>https://maven.alfresco.com/nexus/content/groups/public/</url>
+		</repository>
+		<repository>
+			<releases>
+				<updatePolicy>always</updatePolicy>
+			</releases>
+			<snapshots>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+			<id>Jolbox</id>
+			<name>Jolbox Repositories</name>
+			<url>http://jolbox.com/bonecp/downloads/maven</url>
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>com.alibaba.tamper</groupId>
+			<artifactId>tamper</artifactId>
+			<version>1.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>${xstream.version}</version>
+		</dependency>
+	</dependencies>
+
+	<properties>
+		<xstream.version>1.4.5</xstream.version>
+	</properties>
 </project>

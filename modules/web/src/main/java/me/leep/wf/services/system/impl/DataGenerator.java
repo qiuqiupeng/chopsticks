@@ -11,11 +11,11 @@ package me.leep.wf.services.system.impl;
 import java.io.InputStream;
 import java.util.List;
 
+import me.leep.jee.commons.util.BeanUtil;
 import me.leep.wf.dto.system.AcordionItemBean;
 import me.leep.wf.entity.system.UserBean;
 import me.leep.wf.repository.system.UserRepository;
 import me.leep.wf.services.system.aware.IMenuItemServices;
-import me.leep.wf.util.BeanUtil;
 
 import org.activiti.engine.impl.util.IoUtil;
 import org.slf4j.Logger;

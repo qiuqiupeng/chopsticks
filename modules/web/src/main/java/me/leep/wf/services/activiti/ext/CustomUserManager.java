@@ -11,9 +11,9 @@ package me.leep.wf.services.activiti.ext;
 
 import java.util.List;
 
+import me.leep.jee.commons.util.ActivitiUtils;
 import me.leep.wf.entity.system.UserBean;
 import me.leep.wf.repository.system.UserRepository;
-import me.leep.wf.util.ActivitiUtils;
 
 import org.activiti.engine.identity.Group;
 import org.activiti.engine.identity.User;

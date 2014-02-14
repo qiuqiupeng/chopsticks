@@ -12,12 +12,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import me.leep.jee.commons.util.BeanUtil;
 import me.leep.wf.entity.BaseEntity;
 import me.leep.wf.entity.system.UserBean;
 import me.leep.wf.repository.system.UserRepository;
 import me.leep.wf.services.BaseServiceImpl;
 import me.leep.wf.services.system.aware.IUserServices;
-import me.leep.wf.util.BeanUtil;
 import me.leep.wf.vo.system.User;
 
 import org.apache.commons.lang3.StringUtils;

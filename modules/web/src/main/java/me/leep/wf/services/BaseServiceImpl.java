@@ -9,9 +9,9 @@
 package me.leep.wf.services;
 
 
+import me.leep.jee.commons.util.BeanUtil;
 import me.leep.wf.entity.BaseEntity;
 import me.leep.wf.repository.BaseRepository;
-import me.leep.wf.util.BeanUtil;
 import me.leep.wf.vo.BaseVO;
 
 import org.springframework.beans.factory.annotation.Autowired;

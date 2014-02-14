@@ -3,7 +3,7 @@ package me.leep.wf.test.actions;
 import java.util.HashMap;
 import java.util.Map;
 
-import me.leep.wf.util.ResourceLoaderUtil;
+import me.leep.jee.commons.util.ResourceLoaderUtil;
 
 import org.apache.struts2.StrutsSpringTestCase;
 import org.apache.struts2.dispatcher.Dispatcher;

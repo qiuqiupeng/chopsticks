@@ -12,10 +12,10 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.leep.jee.commons.util.BeanUtil;
+import me.leep.jee.commons.util.FileUtil;
 import me.leep.wf.actions.base.EditAction;
 import me.leep.wf.dto.system.AcordionItemBean;
-import me.leep.wf.util.BeanUtil;
-import me.leep.wf.util.FileUtil;
 
 /**
  * @author 李鹏 

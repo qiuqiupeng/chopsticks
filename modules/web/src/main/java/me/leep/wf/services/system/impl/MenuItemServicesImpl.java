@@ -11,11 +11,11 @@ package me.leep.wf.services.system.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.leep.jee.commons.util.MenuItemUtil;
 import me.leep.wf.dto.system.AcordionItemBean;
 import me.leep.wf.entity.system.ItemBean;
 import me.leep.wf.repository.system.MenuItemRepository;
 import me.leep.wf.services.system.aware.IMenuItemServices;
-import me.leep.wf.util.MenuItemUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
