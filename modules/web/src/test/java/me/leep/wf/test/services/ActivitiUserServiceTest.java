@@ -28,7 +28,7 @@ public class ActivitiUserServiceTest {
 	@Test
 	public void testInsertUser() {
 			
-			initDemoUsers();
+//			initDemoUsers();
 	        
 
 //			assertNotNull("Person object is null but should not be.", activitiUser);

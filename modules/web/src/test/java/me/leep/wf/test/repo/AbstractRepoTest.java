@@ -8,6 +8,7 @@ import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.Factory;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -38,5 +39,10 @@ public class AbstractRepoTest {
         SecurityUtils.setSecurityManager(securityManager);
 
     }
+	
+	@Test
+	public void test() {
+		
+	}
 	
 }

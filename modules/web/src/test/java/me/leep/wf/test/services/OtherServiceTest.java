@@ -1,10 +1,5 @@
 package me.leep.wf.test.services;
 
-import java.beans.PropertyDescriptor;
-
-import me.leep.jee.commons.util.BeanUtil;
-import me.leep.wf.entity.system.UserBean;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -17,15 +12,15 @@ public class OtherServiceTest {
 
 	@Test
 	public void testMain() {
-		try {
-			PropertyDescriptor[] pds = BeanUtil.getProperty(UserBean.class);
-			for (PropertyDescriptor pd : pds) {
-				System.out.println(">>>" + pd.getDisplayName() + ">>" + pd.getPropertyType().getSimpleName());
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
+//		try {
+//			PropertyDescriptor[] pds = BeanUtil.getProperty(UserBean.class);
+//			for (PropertyDescriptor pd : pds) {
+//				System.out.println(">>>" + pd.getDisplayName() + ">>" + pd.getPropertyType().getSimpleName());
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		
 	}
 
 }
