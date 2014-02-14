@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.reload" value="true" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.configuration.xml.reload" value="false" />
+	<constant name="struts.custom.i18n.resources" value="globalMessages" />
+	<constant name="struts.action.extension" value="action,," />
+
+	<!-- Convention Config -->
+	<constant name="struts.convention.result.path" value="/WEB-INF/jsp" />
+	<constant name="struts.convention.exclude.packages" value="me.leep.wf.actions.base" />
+	<!-- Convention Config end -->
+
+	<constant name="struts.serve.static" value="true" />
+	<constant name="struts.serve.static.browserCache" value="false" />
+
+	<package name="json" extends="struts-default,json-default"
+		namespace="/">
+	</package>
+	
+</struts>    

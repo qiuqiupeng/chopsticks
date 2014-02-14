@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd
+            http://www.springframework.org/schema/tx
+            http://www.springframework.org/schema/tx/spring-tx.xsd
+            http://www.springframework.org/schema/jdbc
+            http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/data/jpa
+            http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+	<!-- scans the classpath for annotated components (including @Repostory 
+		and @Service that will be auto-registered as Spring beans -->
+	<context:component-scan base-package="me.leep.wf" />
+
+	<!-- 配置Spring Data JPA扫描目录 -->
+	<jpa:repositories base-package="me.leep.wf.repository" />
+	<bean id="userAuditorAware" class="me.leep.wf.services.UserAuditorAware" />
+	<jpa:auditing auditor-aware-ref="userAuditorAware" />
+
+	<context:property-placeholder
+		ignore-unresolvable="true" location="classpath*:/hibernate.properties" />
+
+	<!-- 使用annotation定义事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager"
+		proxy-target-class="true" />
+
+
+	<!-- -->
+	<bean
+		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+
+	<!-- bean post-processor for JPA annotations -->
+	<bean
+		class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+
+	<bean id="hibernateJpaVendorAdapter"
+		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+
+	<!-- 指定javax.persistence.spi.PersistenceProvider实现类 -->
+	<bean id="persistenceProvider" class="org.hibernate.ejb.HibernatePersistence" />
+
+	<!-- 定义entity管理工厂对象 -->
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="persistenceProvider" ref="persistenceProvider" />
+		<property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter" />
+		<property name="jpaProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory
+				</prop>
+				<prop key="net.sf.ehcache.configurationResourceName">ehcache-hibernate-local.xml</prop>
+				<prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<!-- BoneCP -->
+	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource"
+		p:driverClass="${hibernate.connection.driver}" p:jdbcUrl="${hibernate.connection.url}"
+		p:username="${hibernate.connection.username}" p:password="${hibernate.connection.password}"
+		p:idleConnectionTestPeriodInMinutes="${bonecp.idleConnectionTestPeriodInMinutes}"
+		p:idleMaxAgeInMinutes="${bonecp.idleMaxAgeInMinutes}"
+		p:maxConnectionsPerPartition="${bonecp.maxConnectionsPerPartition}"
+		p:minConnectionsPerPartition="${bonecp.minConnectionsPerPartition}"
+		p:partitionCount="${bonecp.partitionCount}" p:acquireIncrement="${bonecp.acquireIncrement}"
+		p:statementsCacheSize="${bonecp.statementsCacheSize}"
+		p:disableConnectionTracking="${bonecp.disableConnectionTracking}"
+		p:releaseHelperThreads="${bonecp.releaseHelperThreads}" />
+		
+</beans>
