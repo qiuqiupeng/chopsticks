@@ -11,11 +11,11 @@ package me.leep.wf.services.activiti.ext;
 
 import java.util.List;
 
-import me.leep.jee.commons.util.ActivitiUtils;
 import me.leep.wf.entity.system.UserBean;
 import me.leep.wf.repository.system.UserRepository;
 
 import org.activiti.engine.identity.Group;
+import org.activiti.engine.identity.Picture;
 import org.activiti.engine.identity.User;
 import org.activiti.engine.identity.UserQuery;
 import org.activiti.engine.impl.Page;
@@ -42,6 +42,18 @@ public class CustomUserManager extends UserEntityManager {
 	@Autowired
 	private UserRepository userRepository;// 注入UserRepository
 
+	private static UserEntity toActivitiUser(UserBean bUser) {
+		UserEntity userEntity = new UserEntity();
+		userEntity.setId(bUser.getId().toString());
+		userEntity.setFirstName(bUser.getName());
+		Picture picture = new Picture(bUser.getPicture(), "image/jpeg");
+		userEntity.setPicture(picture);
+		// userEntity.setLastName(bUser.getLoginName());
+		userEntity.setPassword(bUser.getPassword());
+		userEntity.setEmail(bUser.getEmail());
+		userEntity.setRevision(1);
+		return userEntity;
+	}
 
 	/* (non-Javadoc)
      * @see org.activiti.engine.impl.persistence.entity.UserEntityManager#findUserById(java.lang.String)
@@ -49,7 +61,7 @@ public class CustomUserManager extends UserEntityManager {
 	@Override
     public UserEntity findUserById(String userId) {
         log.debug("findUserById called with userId: " + userId);
-        UserEntity foundUser = ActivitiUtils.toActivitiUser(userRepository.findByNumber(userId).get(0));
+        UserEntity foundUser = toActivitiUser(userRepository.findByNumber(userId).get(0));
         log.debug("Found user - id:" + foundUser.getId() + " fullname:" + foundUser.getFirstName() + " " + foundUser.getLastName());
         return foundUser;
     }
