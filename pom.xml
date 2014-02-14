@@ -7,5 +7,6 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>modules/web</module>
+		<module>modules/commons</module>
 	</modules>
 </project>
