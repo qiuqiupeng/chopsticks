@@ -451,6 +451,11 @@
 		</dependency>
 
 
+		<dependency>
+			<groupId>me.leep.jee</groupId>
+			<artifactId>commons</artifactId>
+			<version>1.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
