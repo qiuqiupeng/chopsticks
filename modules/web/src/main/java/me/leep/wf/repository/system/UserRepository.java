@@ -22,6 +22,13 @@ import me.leep.wf.repository.BaseRepository;
  * @author 李鹏 2012-8-31
  */
 public interface UserRepository extends BaseRepository<UserBean, String> {
+	/**
+	 * 根据用户名和密码查找
+	 * 
+	 * @param number 用户名
+	 * @param passowrd 密码
+	 * @return 结果集
+	 */
 	List<UserBean> findByNumberAndPassword(String number, String passowrd);
 
 }
