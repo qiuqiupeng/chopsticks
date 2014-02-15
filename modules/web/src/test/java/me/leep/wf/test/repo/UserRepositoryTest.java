@@ -1,5 +1,7 @@
 package me.leep.wf.test.repo;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.List;
 
 import me.leep.wf.entity.system.UserBean;
@@ -22,8 +24,8 @@ public class UserRepositoryTest extends AbstractRepoTest {
 	@Test
 	public void testCountAllUser() {
 		List<UserBean> users= userRepository.findByNumberAndPassword("admin", "jGl25bVBBBW96Qi9Te4V37Fnqchz/Eu4qB9vKrRIqRg=");//.count();
-		
-//		assertEquals(34, count);
+		long count = userRepository.countByNumber("admin");
+		assertEquals(1, count);
 		
 		logger.info("人数 " + users.size());
 		

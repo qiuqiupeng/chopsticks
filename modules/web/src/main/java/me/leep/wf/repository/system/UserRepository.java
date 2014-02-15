@@ -24,5 +24,4 @@ import me.leep.wf.repository.BaseRepository;
 public interface UserRepository extends BaseRepository<UserBean, String> {
 	List<UserBean> findByNumberAndPassword(String number, String passowrd);
 
-	List<UserBean> findByNumber(String number);
 }

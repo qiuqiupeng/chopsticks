@@ -9,6 +9,7 @@
 package me.leep.wf.repository;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -22,5 +23,23 @@ import org.springframework.data.repository.NoRepositoryBean;
 @NoRepositoryBean
 public interface BaseRepository<T, ID extends Serializable> extends
 		JpaRepository<T, ID>, JpaSpecificationExecutor<T> {
+	/**
+	 * 根据编码找出实体列表
+	 * 
+	 * @param number
+	 *            编码
+	 * @return 实体列表结果集
+	 */
+	List<T> findByNumber(String number);
+
+	/**
+	 * 根据编码查找实体数量
+	 * 
+	 * @param number
+	 *            编码
+	 * @return 结果数量
+	 */
+	long countByNumber(String number);
+
 
 }
