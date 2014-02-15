@@ -18,8 +18,8 @@
 
 		<property name="customSessionFactories">
 			<list>
-				<bean class="me.leep.wf.services.activiti.ext.CustomGroupManagerFactory"></bean>
-				<bean class="me.leep.wf.services.activiti.ext.CustomUserManagerFactory"></bean>
+				<bean class="me.leep.jee.commons.services.activiti.ext.CustomGroupManagerFactory"></bean>
+				<bean class="me.leep.jee.commons.services.activiti.ext.CustomUserManagerFactory"></bean>
 			</list>
 		</property>
 

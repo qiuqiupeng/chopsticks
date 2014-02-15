@@ -6,7 +6,7 @@
  *      http://www.apache.org/licenses/LICENSE-2.0
  *
  ********************************************************************/
-package me.leep.wf.services.activiti.ext;
+package me.leep.jee.commons.services.activiti.ext;
 
 
 import java.util.List;
