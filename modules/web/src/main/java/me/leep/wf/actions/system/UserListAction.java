@@ -9,6 +9,7 @@
 package me.leep.wf.actions.system;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import me.leep.wf.actions.base.ListAction;
 import me.leep.wf.services.system.aware.IUserServices;
@@ -24,9 +25,9 @@ public class UserListAction extends ListAction {
 	private static final long serialVersionUID = -6414899855690309595L;
 	private String rowid;
 
+	@Autowired
 	private IUserServices userServices;
 
-	@Override
 	public String execute() throws Exception {
 		return SUCCESS;
 	}
@@ -52,19 +53,4 @@ public class UserListAction extends ListAction {
 		this.rowid = rowid;
 	}
 	
-	/**
-	 * @return userServices
-	 */
-	public IUserServices getUserServices() {
-		return userServices;
-	}
-
-	/**
-	 * @param userServices
-	 *            要设置的 userServices
-	 */
-	public void setUserServices(IUserServices userServices) {
-		this.userServices = userServices;
-	}
-
 }
