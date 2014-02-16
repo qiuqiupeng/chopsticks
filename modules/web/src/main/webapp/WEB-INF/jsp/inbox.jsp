@@ -76,7 +76,7 @@
 		<div class="breadcrumbs" id="breadcrumbs">
 			<script type="text/javascript">
 				try {
-					ace.settings.check('breadcrumbs', 'fixed')
+					ace.settings.check('breadcrumbs', 'fixed');
 				} catch (e) {
 				}
 			</script>
@@ -864,7 +864,7 @@
 
 			//handling tabs and loading/displaying relevant messages and forms
 			//not needed if using the alternative view, as described in docs
-			var prevTab = 'inbox'
+			var prevTab = 'inbox';
 			$('#inbox-tabs a[data-toggle="tab"]').on('show.bs.tab',
 					function(e) {
 						var currentTab = $(e.target).data('target');
@@ -877,7 +877,7 @@
 							//load and display the relevant messages 
 						}
 						prevTab = currentTab;
-					})
+					});
 
 			//basic initializations
 			$('.message-list .message-item input[type=checkbox]').removeAttr(
@@ -1013,7 +1013,7 @@
 													.addClass(
 															'message-inline-open')
 													.append(
-															'<div class="message-content" />')
+															'<div class="message-content" />');
 											var content = message
 													.find(
 															'.message-content:last')
@@ -1113,7 +1113,7 @@
 
 					Inbox.display_bar(count);
 				}
-			}
+			};
 
 			//show message list (back from writing mail or reading a message)
 			Inbox.show_list = function() {
@@ -1126,7 +1126,7 @@
 
 				$('.message-list').removeClass('hide').next().addClass('hide');
 				//hide the message item / new message window and go back to list
-			}
+			};
 
 			//show write mail form
 			Inbox.show_form = function() {
@@ -1168,7 +1168,7 @@
 							$('.message-form').get(0).reset();
 
 						}, 300 + parseInt(Math.random() * 300));
-			}
+			};
 
 			var form_initialized = false;
 			function initialize_form() {
